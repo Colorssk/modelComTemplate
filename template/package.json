@@ -9,12 +9,12 @@
   "dependencies": {
     "@types/lodash-es": "^4.17.6",
     "core-js": "^3.6.5",
-    <%= Object.keys(dependencies).length ?  '' : Object.keys(dependencies).map(module=>(`"${module}":"${devDependencies[module]}",`)) %>
+    <%- Object.keys(dependencies).length ?  Object.keys(dependencies).map((module,index)=>(`"${module}":"${dependencies[module]}"${Object.keys(dependencies).length===index+1?',':''}`)) : '' %>
     "lodash-es": "^4.17.20"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
-    <%= Object.keys(devDependencies).length ?  '' : Object.keys(devDependencies).map(module=>(`"${module}":"${devDependencies[module]}",`)) %>
+    <%- Object.keys(devDependencies).length ?  Object.keys(devDependencies).map((module,index)=>(`"${module}":"${devDependencies[module]}"${Object.keys(devDependencies).length===index+1?',':''}`)) : '' %>
     "@babel/core": "^7.17.10",
     "@babel/plugin-external-helpers": "^7.16.7",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
@@ -74,7 +74,7 @@
     ]
   },
   "peerDependencies": {
-    <%= Object.keys(peerDependencies).length ?  '' : Object.keys(peerDependencies).map((module,index)=>(`"${module}":"${devDependencies[module]}"${Object.keys(peerDependencies).length===index + 1 ? '' : ','}`)) %>
+    <%- Object.keys(peerDependencies).length ?  Object.keys(peerDependencies).map((module,index)=>(`"${module}":"${peerDependencies[module]}"${Object.keys(peerDependencies).length===index + 1 ? '' : ','}`)) : '' %>
   },
   "browserslist": {
     "production": [
