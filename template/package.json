@@ -9,13 +9,23 @@
   "dependencies": {
     "@types/lodash-es": "^4.17.6",
     "core-js": "^3.6.5",
+    "gatsby-plugin-sass": "3.0.0",
+    "lodash-es": "^4.17.20",
     <%- Object.keys(dependencies).length ?  Object.keys(dependencies).map((module,index)=>(`"${module}":"${dependencies[module]}"${Object.keys(dependencies).length===index+1?',':''}`)) : '' %>
-    "lodash-es": "^4.17.20"
+    "node-sass": "5.0.0"
+  },
+  "resolutions": {
+    "node-sass": "5.0.0",
+    "**/node-sass": "5.0.0",
+    "**/sharp": "0.29.2",
+    "sass-loader": "10.0.5",
+    "**/sass-loader": "10.0.5",
+    "remark-mdx": "1.6.22"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
-    <%- Object.keys(devDependencies).length ?  Object.keys(devDependencies).map((module,index)=>(`"${module}":"${devDependencies[module]}"${Object.keys(devDependencies).length===index+1?',':''}`)) : '' %>
     "@babel/core": "^7.17.10",
+    <%- Object.keys(devDependencies).length ?  Object.keys(devDependencies).map((module,index)=>(`"${module}":"${devDependencies[module]}"${Object.keys(devDependencies).length===index+1?',':''}`)) : '' %>
     "@babel/plugin-external-helpers": "^7.16.7",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-decorators": "^7.17.9",
@@ -25,18 +35,32 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@emotion/core": "~10.0.0",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "~10.0.0",
     "@rollup/plugin-image": "^2.1.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.0",
     "@types/node": "^16.11.33",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "babel-preset-gatsby": "0.12.3",
     "cssnano": "^5.1.7",
+    "docz": "^2.0.0-rc.56",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
     "less": "^4.1.2",
     "postcss": "^8.4.13",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "^6.0.3",
     "prettier": "^2.6.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
     "rollup": "^2.73.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -53,7 +77,10 @@
     "build": "cross-env BABEL_ENV=rollup rollup -c script/rollup.config.js",
     "build-prod": "cross-env NODE_ENV=production rollup -c script/rollup.config.js",
     "test": "echo \"temporary do nothing\"",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
   },
   "keywords": [
     "Component",
