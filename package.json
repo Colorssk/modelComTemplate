@@ -1,6 +1,6 @@
 {
   "name": "@glen-tool/component-model",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "repo for developing conponent, consider it as cli",
   "main": "index.js",
   "devDependencies": {},
