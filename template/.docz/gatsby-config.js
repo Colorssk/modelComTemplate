@@ -19,7 +19,7 @@ const config = {
   pathPrefix: '/',
 
   siteMetadata: {
-    title: '组件库左上角标题',
+    title: 'component ui',
     description: 'My awesome app using docz',
   },
   plugins: [
@@ -39,7 +39,7 @@ const config = {
         themesDir: 'theme',
         mdxExtensions: ['.md', '.mdx'],
         docgenConfig: {},
-        menu: ['快速上手', '业务组件'],
+        menu: ['Introduction', 'BasicComponents'],
         mdPlugins: [],
         hastPlugins: [],
         ignore: [],
@@ -65,7 +65,7 @@ const config = {
         eb: 'master',
         'edit-branch': 'master',
         config: '',
-        title: '组件库左上角标题',
+        title: 'component ui',
         description: 'My awesome app using docz',
         host: 'localhost',
         port: 3000,
